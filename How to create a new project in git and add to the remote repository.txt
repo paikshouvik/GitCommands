@@ -1,0 +1,60 @@
+How to create a new project in git and add files/updates to the remote repository?
+
+Start with creating a new project
+Try to avoid changing the main branch at all costs. Use this procedure, 
+             (i)  Create a new branch remotely before updating the main branch
+             (ii) clone the remote project locally
+             (iii) Add or update the change in the newly created branch
+             (iv) Stage the changes 
+             (v) Commit these changes with a message
+             (vi) push to the remote repository  
+             (vii) marge the new branch to the main branch and delete the created branch
+
+Step 1: 
+go to the remote repository using a browser and create a new project.
+
+Step 2: 
+Open the cmd prompt and go to the desired directory 
+cd C:\dev\Desired_Directory
+Now, clone the project you want to update. execute the below command
+git clone <url>
+Example
+git clone https://github.com/paikshouvik/GitCommands.git
+This will create a folder named "GitCommands" inside your desired directory 
+
+git fetch origin <branch name>
+git fetch origin dev
+
+git switch <branch name>
+git switch dev
+
+# this displays the state of the working directory and the staging area
+git status 
+Step 3: 
+Update or add the changes using a code editor or text editor or by creating a new file inside the cloned directory.
+For example, go to the folder "GitCommands" for the above-cloned project. Add a new file or update the files. 
+
+Step 4:
+To stage the changes,
+#To stage all changes at once 
+git add . 
+or
+git add -A
+or 
+git add <file name>
+
+Step 5:
+Commit the changes
+git commit -m "commit message"
+
+Step 6:
+push to git remote branch
+git push origin <branch name>
+
+
+Step 7:
+let's say we want to merge into the master branch 
+git checkout master
+git pull origin master 
+git merge <branch name>
+git push origin master
